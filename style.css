@@ -128,7 +128,7 @@ h6,
     font-size: 16px;
     font-weight: 800;
     letter-spacing: .15em;
-    line-height: 40px;
+    line-height: 1.5;
     text-transform: uppercase;
     color: #fff;
     margin-top: 20px;
@@ -142,11 +142,12 @@ h6,
 }
 .offcanvas-menu a {
     margin-left: 20px;
+    margin-bottom: 15px;
     color: gray;
     display: block;
     font-size: 12px;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 1.5;
     letter-spacing: .1em;
     text-transform: uppercase;
 }
@@ -163,8 +164,8 @@ h6,
     text-align: left;
     width: 25px;
     font-size: 20px;
-    line-height: 40px;
-    margin: 25px 10px;
+    line-height: 1.5;
+    margin: 10px 10px 10px 0;
     padding: 0;
 }
 .offcanvas-menu p {
