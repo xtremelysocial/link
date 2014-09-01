@@ -98,6 +98,10 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 
 == CHANGELOG ==
 
+= 1.0.1 =
+* Basic support for Jetpack Portfolios
+* Increase embedded video width to full-width (1170px)
+
 = 1.0 =
 * Initial version
 

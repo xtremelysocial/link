@@ -34,12 +34,11 @@
  * sample_footer_menu - Whether to display sample footer menu with Top and Home links
  */
 $xsbf_theme_options = array(
-/*
 	'background_color' 		=> 'f2f2f2',
 	'content_width' 		=> 1170,
-	'embed_video_width' 	=> 600,
+	'embed_video_width' 	=> 1170,
 	'embed_video_height' 	=> null, // i.e. calculate it automatically
-	'post_formats' 			=> '',
+	'post_formats' 			=> null,
 	'touch_support' 		=> true,
 	'fontawesome' 			=> true,
 	'bootstrap_gradients' 	=> false,
@@ -47,7 +46,6 @@ $xsbf_theme_options = array(
 	'image_keyboard_nav' 	=> true,
 	'sample_widgets' 		=> true,
 	'sample_footer_menu'	=> true
-*/
 );
 
 /*

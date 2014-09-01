@@ -180,11 +180,13 @@
 			else :
 				_e( 'Archives', 'flat-bootstrap' );
 			*/
-			/*
+
+			elseif ( is_post_type_archive( 'jetpack-portfolio' ) OR is_tax ( 'jetpack-portfolio-type' ) ) :
+				_e( 'Portfolio', 'flat-bootstrap' );
+						
 			else :
-				//_e( 'Oops, we need to update content-header to catch this page type', 'flat-bootstrap' );
-				the_title();
-			*/
+				_e( 'Archives', 'flat-bootstrap' );
+				
 			endif; // is_page()
 			?>
 			</h1>
