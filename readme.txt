@@ -99,6 +99,7 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 == CHANGELOG ==
 
 = 1.1 =
+* Added new custom header that is a city skyline
 * Remove content-header.php as the parent theme (Flat Bootstrap v1.4) now handles the logic needed in this child theme. So no need to override it here anymore!
 * Remove sidebar-footer.php as no sample widgets are displayed there (they are in sidebar-pagebottom.php) so no need to override the parent theme (Flat Bootstrap v1.4)
 * Move the Page Top widget area to below the header image as this looks better.

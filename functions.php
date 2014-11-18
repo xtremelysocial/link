@@ -149,6 +149,11 @@ function xsbf_spot_after_setup_theme() {
 			'thumbnail_url' => '%2$s/images/headers/notepad-green-thumbnail.jpg',
 			'description'   => __( 'Notepad', 'flat-bootstrap' )
 		),
+		'skyline' => array(
+			'url'           => '%2$s/images/headers/skyline-green.jpg',
+			'thumbnail_url' => '%2$s/images/headers/skyline-green-thumbnail.jpg',
+			'description'   => __( 'Skyline', 'flat-bootstrap' )
+		),
 	) );
 }
 

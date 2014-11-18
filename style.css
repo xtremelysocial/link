@@ -90,6 +90,8 @@ h6,
 	}
 }
 
+/* Set initial image background so light text is readable before image loads */
+.content-header-image,
 .content-header {
     background-color: #1abc9c;
     color: #fff;
