@@ -15,39 +15,57 @@
  * 
  * Parameters:
  * background_color - Hex code for default background color without the #. eg) ffffff
+ *
  * content_width - Only for determining "full width" image. Actual width in Bootstrap.css.
  * 		1170 for screens over 1200px resolution, otherwise 970.
+ *
  * embed_video_width - Sets the width of videos that use the <embed> tag. This defaults
  * 		to the smallest width of content with a sidebar before the sidebar collapses.
  *		The height is automatically set at a 16:9 ratio unless overridden.
+ *
  * embed_video_height - Leave empty to automatically set at a 16:9 ratio to the width
+ *
  * post_formats - WordPress extra post formats. i.e. 'aside', 'image', 'video', 'quote',
  * 		'link'
+ *
  * touch_support - Whether to load touch support for carousels (sliders)
+ *
  * fontawesome - Whether to load font-awesome font set or not
+ *
  * bootstrap_gradients - Whether to load Bootstrap "theme" CSS for gradients
+ *
  * navbar_classes - One or more of navbar-default, navbar-inverse, navbar-fixed-top, etc.
+ * 
+ * custom_header_location - If 'header', displays the custom header above the navbar. If
+ * 		'content-header', displays it below the navbar in place of the colored content-
+ *		header section.
+ *
  * image_keyboard_nav - Whether to load javascript for using the keyboard to navigate
  		image attachment pages
+ *
  * sample_widgets - Whether to display sample widgets in the footer and page-bottom widet
  		areas.
+ *
  * sample_footer_menu - Whether to display sample footer menu with Top and Home links
+ * 
+ * testimonials - Whether to activate testimonials custom post type if Jetpack plugin is 
+ * 		active
  */
 $xsbf_theme_options = array(
-/*
-	'background_color' 		=> 'f2f2f2',
-	'content_width' 		=> 1170,
-	'embed_video_width' 	=> 600,
-	'embed_video_height' 	=> null, // i.e. calculate it automatically
-	'post_formats' 			=> '',
-	'touch_support' 		=> true,
-	'fontawesome' 			=> true,
-	'bootstrap_gradients' 	=> false,
-	'navbar_classes'		=> 'navbar-inverse navbar-fixed-top',
-	'image_keyboard_nav' 	=> true,
-	'sample_widgets' 		=> true,
-	'sample_footer_menu'	=> true
-*/
+	//'background_color' 		=> 'f2f2f2',
+	//'content_width' 			=> 1170,
+	//'embed_video_width' 		=> 1170,
+	//'embed_video_height' 		=> null, // i.e. calculate it automatically
+	//'post_formats' 			=> null,
+	//'touch_support' 			=> true,
+	//'fontawesome' 			=> true,
+	//'bootstrap_gradients' 	=> false,
+	//////'navbar_classes'			=> 'navbar-inverse navbar-fixed-top',
+	'custom_header_location' 	=> 'content-header',
+	//'image_keyboard_nav' 		=> true,
+	//'sample_widgets' 			=> true,
+	//'sample_footer_menu'		=> true
+	//'testimonials'			=> true // requires Jetpack plugin
 );
 
 /*
@@ -104,7 +122,7 @@ function xsbf_spot_after_setup_theme() {
 		'briefcase' => array(
 			'url'           => '%2$s/images/headers/briefcase-green.jpg',
 			'thumbnail_url' => '%2$s/images/headers/briefcase-green-thumbnail.jpg',
-			'description'   => __( 'Book', 'flat-bootstrap' )
+			'description'   => __( 'Briefcase', 'flat-bootstrap' )
 		),
 		'camera' => array(
 			'url'           => '%2$s/images/headers/camera-green.jpg',
@@ -129,7 +147,12 @@ function xsbf_spot_after_setup_theme() {
 		'notepad' => array(
 			'url'           => '%2$s/images/headers/notepad-green.jpg',
 			'thumbnail_url' => '%2$s/images/headers/notepad-green-thumbnail.jpg',
-			'description'   => __( 'Guitar', 'flat-bootstrap' )
+			'description'   => __( 'Notepad', 'flat-bootstrap' )
+		),
+		'skyline' => array(
+			'url'           => '%2$s/images/headers/skyline-green.jpg',
+			'thumbnail_url' => '%2$s/images/headers/skyline-green-thumbnail.jpg',
+			'description'   => __( 'Skyline', 'flat-bootstrap' )
 		),
 	) );
 }

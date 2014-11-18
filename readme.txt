@@ -3,9 +3,9 @@
 Contributors: timnicholson
 Tags: one-column, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, featured-image-header, full-width-template, flexible-header, theme-options, sticky-post, threaded-comments, light, translation-ready, rtl-language-support, custom-background
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JGJUJVK99KHRE
-Requires at least: 3.7
-Tested up to: 3.9
-Stable tag: 1.0
+Requires at least: 3.8
+Tested up to: 4.0
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.opensource.org/licenses/GPL-3.0
 
@@ -45,7 +45,7 @@ The theme was inspired by the "Link" theme by Blacktie.co. They deserve all the 
 
 == HOW TO USE THIS THEME ==
 
-= Setting up the Primary Menu =
+= Setting up the Primary and Social Menus =
 
 This theme is designed for the Primary menu to also include links to your social media profiles. So there is an additional menu called "Social Menu". If selected, it will display at the bottom of the "Header Menu".
 
@@ -75,7 +75,7 @@ If you don't need the elaborate samples at the bottom of the page or if you want
 
 = Set up the Footer Menu =
 
-This theme also supports a Footer Menu. We've defaulted a link to the top of the page and to your home page there, but you can create your own menu and use that.
+This theme also supports a Footer Menu. We've defaulted a link to the top of the page (with a nice smooth scrolling animation) and a link to your home page there, but you can create your own menu and use that.
 
 = About WordPress Child Themes =
 
@@ -97,6 +97,14 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 
 
 == CHANGELOG ==
+
+= 1.1 =
+* Added new custom header that is a city skyline
+* Remove content-header.php as the parent theme (Flat Bootstrap v1.4) now handles the logic needed in this child theme. So no need to override it here anymore!
+* Remove sidebar-footer.php as no sample widgets are displayed there (they are in sidebar-pagebottom.php) so no need to override the parent theme (Flat Bootstrap v1.4)
+* Move the Page Top widget area to below the header image as this looks better.
+* Bumped version numbers.
+* Includes all the latest enhancements from the parent theme, such as support for portfolios and testimonials, new page templates, full-width embedded videos, expanded color palette, and much more.
 
 = 1.0 =
 * Initial version
