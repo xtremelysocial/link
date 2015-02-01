@@ -4,11 +4,11 @@ Theme URI: http://xtremelysocial.com/wordpress/link/
 Description: Link by XtremelySocial is an adaptation of the "Link" theme by Blacktie.co. It is a modern, fully responsive, "flat" style theme with a nice color palette, big full-width images, and full-width colored sections. The navbar is just a menu button fixed at the top of the page to let your content take center stage. It includes several beautiful header images for businesses, photographers, musicians, writers and you can upload your own as well. For more information go to http://xtremelysocial.com/wordpress/link/.
 Author: XtremelySocial and Blacktie
 Author URI: http://xtremelysocial.com
-Version: 1.1
+Version: 1.2
 License: GNU General Public License
 License URI: http://www.opensource.org/licenses/GPL-3.0
 Template: flat-bootstrap
-Template Version: 1.4.1
+Template Version: 1.5
 Tags: one-column, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, featured-image-header, full-width-template, flexible-header, rtl-language-support, theme-options, translation-ready, sticky-post, threaded-comments, light, blue
 
 Link WordPress theme, Copyright (C) 2014 XtremelySocial
@@ -100,12 +100,13 @@ h6,
 /* Toggle Menu (Offcanvas) */
 .offcanvas-menu {
     position: fixed;
-    right: -200px;
-    width: 260px;
+    right: -240px;
+    width: 300px;
     height: 100%;
     top: 0;
     z-index: 10;
     text-align: left;
+	overflow-y: auto;
 }
 .offcanvas-menu.menu-open {
     right: 0;
@@ -115,8 +116,9 @@ h6,
     top: 0;
     left: 60px;
     background: #1a1a1a;
-    width: 200px;
-    height: 100%
+    width: 240px;
+    height: 100%;
+	overflow-y: auto;
 }
 .menu-wrap ul {
 	list-style: none;
@@ -151,8 +153,17 @@ h6,
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: .1em;
+}
+
+.offcanvas-menu ul li {
     text-transform: uppercase;
 }
+
+.offcanvas-menu ul li li {
+    text-transform: none;
+    margin-left: 10px;
+}
+
 .offcanvas-menu a:hover {
     color: #fff;
 }
@@ -362,3 +373,4 @@ h1.entry-title {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+

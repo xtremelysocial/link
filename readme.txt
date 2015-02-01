@@ -98,6 +98,11 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 
 == CHANGELOG ==
 
+= 1.2 =
+* Enhanced the offcanvas menu so that it now scrolls to allow for more menu items!
+* Because of this, up to two levels will now display. The submenu items are indented and aren't forced to uppercase.
+* Widened the menu by 40px to look better with longer link titles and when second level menu items are displayed.
+
 = 1.1 =
 * Added new custom header that is a city skyline
 * Remove content-header.php as the parent theme (Flat Bootstrap v1.4) now handles the logic needed in this child theme. So no need to override it here anymore!
