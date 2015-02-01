@@ -28,8 +28,8 @@
 	<?php // Set up the navbar as a header ?>
 	<header id="masthead" class="site-header" role="banner">
 
-	<?php 
-	// Off-canvas menu always displayed even for desktop browser
+	<?php
+	// Custom off-canvas menu always displayed even for desktop browser
 	$navbar = ''
 	.'<nav class="offcanvas-menu" id="theMenu"><!-- menu-open -->'
 	.'<div class="menu-wrap">'
@@ -50,7 +50,7 @@
 		'container' 		=> false, //<nav> or <div> class
 		'menu_class' 		=> 'offcanvas-links', //<ul> class
 		'fallback_cb' 		=> 'wp_page_menu',
-		'depth'				=> 1,
+		'depth'				=> 2,
 		'echo'				=> false
 		) 
 	);
@@ -69,7 +69,7 @@
 
 	$navbar .= '</div>';
 
-	// Navbar menu toggle button		
+	// Custom navbar menu toggle button		
 	$navbar .= ''
 	.'<!-- Menu button -->'
 	.'<div id="menuToggle" class="menu-close"><!-- active -->'
