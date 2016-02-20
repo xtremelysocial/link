@@ -68,7 +68,7 @@ $xsbf_theme_options = array(
 	//'testimonials'			=> true // requires Jetpack plugin
 );
 
-/*
+/**
  * Add our javascript for the offcanvas menu (Bootstrap doesn't have this)
  */
 add_action( 'wp_enqueue_scripts', 'xsbf_link_scripts' );
@@ -78,14 +78,14 @@ function xsbf_link_scripts() {
 }
 
 /**
- * ADD A THIRD MENU FOR SOCIAL MEDIA ICONS TO BE ADDED TO THE OFFCANVAS MENU
- * NOTE: THIS IS FROM JUSTIN TADLOCK
+ * Add a third menu for social media icons to be added to the offcanvas menu. Note: This 
+ * idea is from Justin Tadlock.
  */
 add_action( 'init', 'xsbf_link_register_menus' );
 function xsbf_link_register_menus() {
 	register_nav_menus(
 		array(
-			'social' 	=> __( 'Social Menu', 'xtremelysocial' ),
+			'social' 	=> __( 'Social Menu', 'flat-bootstrap' ),
 		)
 	);
 }
@@ -93,8 +93,8 @@ function xsbf_link_register_menus() {
 /**
  * Force the site title to display in the navbar and add our custom header images
  */
-add_action( 'after_setup_theme', 'xsbf_spot_after_setup_theme' ); 
-function xsbf_spot_after_setup_theme() {
+add_action( 'after_setup_theme', 'xsbf_link_after_setup_theme' ); 
+function xsbf_link_after_setup_theme() {
 
 	// These args will override the ones in the parent theme
 	$args = array(
