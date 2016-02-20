@@ -12,7 +12,7 @@
 
 <?php 
 /* If page bottom "sidebar" has widgets, then retrieve them */
-$sidebar_pagebottom = get_dynamic_sidebar( 'Page Bottom' );
+$sidebar_pagebottom = get_dynamic_sidebar( 'sidebar-4' );
 
 /* If not, then display sample widgets unless turned off in theme options */
 global $xsbf_theme_options;
@@ -113,10 +113,12 @@ if ( $xsbf_theme_options['sample_widgets'] != false AND ! $sidebar_pagebottom ) 
 
 }
 
-/* Apply filters and display the footer widgets */
+/* Apply filters and display the widgets */
+$sidebar_pagebottom = apply_filters( 'xsbf_pagebottom', $sidebar_pagebottom );
+
 if ( $sidebar_pagebottom ) :
 ?>
 	<div id="sidebar-pagebottom" class="sidebar-pagebottom">
-		<?php echo apply_filters( 'xsbf_pagebottom', $sidebar_pagebottom ); ?>
+		<?php echo $sidebar_pagebottom; ?>
 	</div><!-- .sidebar-pagebottom -->
 <?php endif;?>

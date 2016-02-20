@@ -3,9 +3,9 @@
 Contributors: timnicholson
 Tags: one-column, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, featured-image-header, full-width-template, flexible-header, theme-options, sticky-post, threaded-comments, light, translation-ready, rtl-language-support, custom-background
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JGJUJVK99KHRE
-Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 1.1
+Requires at least: 4.2
+Tested up to: 4.4.2
+Stable tag: 1.3
 License: GPLv3
 License URI: http://www.opensource.org/licenses/GPL-3.0
 
@@ -97,6 +97,13 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 
 
 == CHANGELOG ==
+
+= 1.3 =
+* Fixed an issue with the Page Bottom widget area when using a language translation. Adjusted the sidebar-pagebottom.php to call the sidebar by ID rather than name since language translations can change the name.
+* Enhanced the CSS to better handle the WordPress Admin Bar when it's in use. Previously, the main menu overlapped it a bit which was ugly and made it harder to navigate. 
+* Updated the language translation tag for the social menu. It previously had a different tag ('xtremelysocial') than the rest of the theme ('flat-bootstrap').
+* Changed a function name that referred to our spot theme instead of this link theme. It didn't cause any problems, but was confusing to anyone looking at the code.
+* Removed reference to Blacktie.co from the site credits that automatically display at the bottom of the theme. They are still credited in this readme.txt file of course.
 
 = 1.2 =
 * Enhanced the offcanvas menu so that it now scrolls to allow for more menu items!
