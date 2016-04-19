@@ -2,7 +2,7 @@
 Theme Name: Link
 Theme URI: http://xtremelysocial.com/wordpress/link/
 Description: Link by XtremelySocial is an adaptation of the "Link" theme by Blacktie.co. It is a modern, fully responsive, "flat" style theme with a nice color palette, big full-width images, and full-width colored sections. The navbar is just a menu button fixed at the top of the page to let your content take center stage. It includes several beautiful header images for businesses, photographers, musicians, writers and you can upload your own as well. For more information go to http://xtremelysocial.com/wordpress/link/.
-Author: XtremelySocial and Blacktie
+Author: XtremelySocial
 Author URI: http://xtremelysocial.com
 Version: 1.4
 License: GNU General Public License
@@ -273,6 +273,11 @@ body.admin-bar #wpadminbar {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+/* Remove border around page since this theme extends outside of it */
+#page {
+	border: none;
+}
 
 /*--------------------------------------------------------------
 ## Header
