@@ -13,6 +13,7 @@
 <?php 
 /* If page bottom "sidebar" has widgets, then retrieve them */
 $sidebar_pagebottom = get_dynamic_sidebar( 'sidebar-4' );
+$sidebar_pagebottom = apply_filters( 'xsbf_pagebottom', $sidebar_pagebottom );
 
 /* If not, then display sample widgets unless turned off in theme options */
 global $xsbf_theme_options;
