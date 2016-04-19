@@ -3,9 +3,9 @@
 Contributors: timnicholson
 Tags: one-column, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, featured-image-header, full-width-template, flexible-header, theme-options, sticky-post, threaded-comments, light, translation-ready, rtl-language-support, custom-background
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JGJUJVK99KHRE
-Requires at least: 4.2
-Tested up to: 4.4.2
-Stable tag: 1.3
+Requires at least: 4.3
+Tested up to: 4.5
+Stable tag: 1.4
 License: GPLv3
 License URI: http://www.opensource.org/licenses/GPL-3.0
 
@@ -97,6 +97,16 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 
 
 == CHANGELOG ==
+
+= 1.4 = 
+* Changed sidebar-pagebottom.php to always fire off the xsbf_pagebottom() filter so that plugins can override what displays there even if a user hasn't added any widgets yet.
+* Load the parent theme's (Flat Bootstrap) style.css from functions.php to improve performance instead of using @include in the theme's style.css. 
+* Removed CSS for "after-footer" (footer nav menu and site credits) so it matches the parent theme. This is needed for when Flat Bootstrap v2.0 is released.
+* Updated the comments in functions.php to reflect the new option for custom header location (not used by this theme).
+* We now completely override the parent theme's xsbf_custom_header_setup() because when v2.0 of Flat Bootstrap is released, it will have its own custom headers. 
+* If Jetpack Social Menu is activated, this theme will use that instead of our own. We have also added the phrase "Jetpack" to their social menu so its clear which one is theirs and which one is ours.
+* Added footer.php to override the parent theme. This is needed for when Flat Bootstrap v2.0 is released.
+* Added a table of contents to style.css and better organized the sections.
 
 = 1.3 =
 * Fixed an issue with the Page Bottom widget area when using a language translation. Adjusted the sidebar-pagebottom.php to call the sidebar by ID rather than name since language translations can change the name.

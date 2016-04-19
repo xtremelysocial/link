@@ -38,7 +38,8 @@
  * 
  * custom_header_location - If 'header', displays the custom header above the navbar. If
  * 		'content-header', displays it below the navbar in place of the colored content-
- *		header section.
+ *		header section. If 'both' (or anything else), it will display the header text but
+ *		also display the custom header below the navbar.
  *
  * image_keyboard_nav - Whether to load javascript for using the keyboard to navigate
  		image attachment pages
@@ -68,6 +69,24 @@ $xsbf_theme_options = array(
 	//'testimonials'			=> true // requires Jetpack plugin
 );
 
+/* 
+ * Load the parent theme's stylesheet here for performance reasons instead of using 
+ * @include in this theme's stylesheet. Load this after the parent theme's styles.
+ */
+//add_action( 'wp_enqueue_scripts', 'xsbf_pratt_enqueue_styles', 20 );
+add_action( 'wp_enqueue_scripts', 'xsbf_pratt_enqueue_styles' );
+function xsbf_pratt_enqueue_styles() {
+	wp_enqueue_style( 'flat-bootstrap', 
+		get_template_directory_uri() . '/style.css',
+		array ( 'bootstrap', 'theme-base', 'theme-flat')
+	);
+
+	wp_enqueue_style( 'link', 
+		get_stylesheet_directory_uri() . '/style.css', 
+		array('flat-bootstrap') 
+	);
+}
+
 /**
  * Add our javascript for the offcanvas menu (Bootstrap doesn't have this)
  */
@@ -81,30 +100,35 @@ function xsbf_link_scripts() {
  * Add a third menu for social media icons to be added to the offcanvas menu. Note: This 
  * idea is from Justin Tadlock.
  */
-add_action( 'init', 'xsbf_link_register_menus' );
-function xsbf_link_register_menus() {
-	register_nav_menus(
-		array(
-			'social' 	=> __( 'Social Menu', 'flat-bootstrap' ),
-		)
-	);
-}
+if ( !function_exists( 'jetpack_social_menu' ) OR !has_nav_menu( 'jetpack-social-menu' ) ) {
+	add_action( 'init', 'xsbf_link_register_menus' );
+	function xsbf_link_register_menus() {
+		register_nav_menus(
+			array(
+				'social' 	=> __( 'Social Menu', 'flat-bootstrap' ),
+			)
+		);
+	} //endfunction
+}//endif 
 
 /**
  * Force the site title to display in the navbar and add our custom header images
  */
-add_action( 'after_setup_theme', 'xsbf_link_after_setup_theme' ); 
-function xsbf_link_after_setup_theme() {
+/*add_action( 'after_setup_theme', 'xsbf_link_after_setup_theme' ); 
+function xsbf_link_after_setup_theme() {*/
+add_action( 'after_setup_theme', 'xsbf_custom_header_setup' ); 
+function xsbf_custom_header_setup() {
 
-	// These args will override the ones in the parent theme
-	$args = array(
-		'header-text' => false, // doesn't allow user to turn off header text
-		'default-text-color'     => 'fff',
+	add_theme_support( 'custom-header', apply_filters( 'xsbf_custom_header_args', array(
+		'header-text' 			=> false, // doesn't allow user to turn off header text
+		'default-text-color'	=> 'fff',
 		'default-image' => get_stylesheet_directory_uri() . '/images/headers/briefcase-green.jpg',
-		'width' => 1600,
-		'height' => 900
-	);
-	add_theme_support( 'custom-header', $args );
+		'width' 				=> 1600,
+		'height' 				=> 700, //large: home 700, other 400; mobile home 480, other 340 mobile; images are 900
+		'flex-width'            => true,
+		'flex-height'           => true,
+		'wp-head-callback'      => 'xsbf_header_style'
+	) ) );
 
 	//The %2$s references the child theme directory (ie the stylesheet directory), use 
 	// %s to reference the parent directory.

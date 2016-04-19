@@ -46,27 +46,43 @@
 	// Primary navbar menu links
 	$navbar .= wp_nav_menu( 
 		array(  
-		'theme_location' 	=> 'primary',
-		'container' 		=> false, //<nav> or <div> class
-		'menu_class' 		=> 'offcanvas-links', //<ul> class
-		'fallback_cb' 		=> 'wp_page_menu',
-		'depth'				=> 2,
-		'echo'				=> false
+		'theme_location' 		=> 'primary',
+		'container' 			=> false, //<nav> or <div> class
+		'menu_class' 			=> 'offcanvas-links', //<ul> class
+		'fallback_cb' 			=> 'wp_page_menu',
+		'depth'					=> 2,
+		'echo'					=> false
 		) 
 	);
 	
-	// Social navbar menu links
-	$navbar .= wp_nav_menu( 
-		array(  
-		'theme_location' 	=> 'social',
-		'container' 		=> false, //<nav> or <div> class
-		'menu_class' 		=> 'offcanvas-links', //<ul> class
-		'fallback_cb' 		=> null,
-		'depth'				=> 1,
-		'echo'				=> false
-		) 
-	);
+	// If Jetpack Social Menu active, use it.
+	if ( function_exists( 'jetpack_social_menu' ) AND has_nav_menu( 'jetpack-social-menu' ) ) {
+		$navbar .= wp_nav_menu( array(
+			'theme_location'	=> 'jetpack-social-menu',
+			'container' 		=> 'nav', //<nav> or <div> class
+			'container_class' 	=> 'jetpack-social-navigation', //<nav> or <div> class
+			//'menu_class' 		=> 'offcanvas-links', //<ul> class
+			'link_before'     	=> '<span class="screen-reader-text">',
+			'link_after'      	=> '</span>',
+			'depth'           	=> 1,
+			'echo'				=> false
+		) );
 
+	// Otherwise, use the social menu in this theme
+	} else {
+		$navbar .= wp_nav_menu( 
+			array(  
+			'theme_location' 	=> 'social',
+			'container' 		=> false, //<nav> or <div> class
+			'menu_class' 		=> 'offcanvas-links', //<ul> class
+			//'link_before'     	=> '<span class="screen-reader-text">',
+			//'link_after'      	=> '</span>',
+			'fallback_cb' 		=> null,
+			'depth'				=> 1,
+			'echo'				=> false
+			) 
+		);
+	}
 	$navbar .= '</div>';
 
 	// Custom navbar menu toggle button		
