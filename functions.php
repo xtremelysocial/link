@@ -112,13 +112,18 @@ if ( !function_exists( 'jetpack_social_menu' ) OR !has_nav_menu( 'jetpack-social
 }//endif 
 
 /**
- * Force the site title to display in the navbar and add our custom header images
+ * Override custom logo and header from the parent theme. Note priority 12 to run after
+ * the parent theme's setup.
  */
 /*add_action( 'after_setup_theme', 'xsbf_link_after_setup_theme' ); 
 function xsbf_link_after_setup_theme() {*/
-add_action( 'after_setup_theme', 'xsbf_custom_header_setup' ); 
+add_action( 'after_setup_theme', 'xsbf_custom_header_setup', 12 ); 
 function xsbf_custom_header_setup() {
 
+	/* Remove custom logo support (for now) */
+	remove_theme_support( 'custom-logo'); 
+
+	/* Override custom headers */
 	add_theme_support( 'custom-header', apply_filters( 'xsbf_custom_header_args', array(
 		'header-text' 			=> false, // doesn't allow user to turn off header text
 		'default-text-color'	=> 'fff',

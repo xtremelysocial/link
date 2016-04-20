@@ -100,6 +100,7 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 
 = 1.4 = 
 * Changed sidebar-pagebottom.php to always fire off the xsbf_pagebottom() filter so that plugins can override what displays there even if a user hasn't added any widgets yet.
+* Fixed minor sidebar-pagebottom.php issue to remove an extra </div> which wasn't breaking the layout, but was causing sample widgets to be in their own <div> instead of within sidebar-pagebottom. 
 * Load the parent theme's (Flat Bootstrap) style.css from functions.php to improve performance instead of using @include in the theme's style.css. 
 * Removed CSS for "after-footer" (footer nav menu and site credits) so it matches the parent theme. This is needed for when Flat Bootstrap v2.0 is released.
 * Updated the comments in functions.php to reflect the new option for custom header location (not used by this theme).
@@ -111,6 +112,7 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 * Added CSS to remove border around page in preparation for Flat Bootstrap v2.0. This is because this theme extends beyond the page in the page bottom widget area.
 * Removed site credit reference to Blacktie.co, but of course still credited here and throughout the code itself.
 * Added a blank /images/post-thumbnail-default.png in preparation for Flat Bootstrap v2.0.
+* Remove theme support for custom logo coming in Flat Bootstrap v2.0 (for now)
 * Updated screenshot to high resolution (1200x900px)
 * Added a table of contents to style.css and better organized the sections.
 

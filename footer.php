@@ -9,7 +9,7 @@
  * @package flat-bootstrap
  */
 ?>
-	<!-- </div> --><!-- #content -->
+	</div><!-- #content -->
 
 	<?php // Page bottom (before footer) widget area 
 	get_sidebar( 'pagebottom' ); 
@@ -122,7 +122,7 @@
 
 	<?php wp_footer(); ?>
 
-</div><!-- #content -->
+<!-- </div> --><!-- #content -->
 </div><!-- #page -->
 
 </body>
