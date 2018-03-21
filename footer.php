@@ -1,12 +1,12 @@
 <?php
 /**
- * Theme: Flat Bootstrap
+ * Theme: Link
  * 
  * The template for displaying the footer.
  *
  * Contains the closing of the #content div and all content after
  *
- * @package flat-bootstrap
+ * @package link
  */
 ?>
 	</div><!-- #content -->

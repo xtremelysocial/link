@@ -97,6 +97,8 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 
 
 == CHANGELOG ==
+= 1.5 =
+* Made the handling of the social menu in the main navigation bar more robust. The logic no longer requires the use of <i> tags for the social menu icons. You can now use <span> tags as well.
 
 = 1.4 = 
 * Changed sidebar-pagebottom.php to always fire off the xsbf_pagebottom() filter so that plugins can override what displays there even if a user hasn't added any widgets yet.
