@@ -112,19 +112,24 @@ if ( !function_exists( 'jetpack_social_menu' ) OR !has_nav_menu( 'jetpack-social
 }//endif 
 
 /**
- * Force the site title to display in the navbar and add our custom header images
+ * Override custom logo and header from the parent theme. Note priority 12 to run after
+ * the parent theme's setup.
  */
 /*add_action( 'after_setup_theme', 'xsbf_link_after_setup_theme' ); 
 function xsbf_link_after_setup_theme() {*/
-add_action( 'after_setup_theme', 'xsbf_custom_header_setup' ); 
+add_action( 'after_setup_theme', 'xsbf_custom_header_setup', 12 ); 
 function xsbf_custom_header_setup() {
 
+	/* Remove custom logo support (for now) */
+	remove_theme_support( 'custom-logo'); 
+
+	/* Override custom headers */
 	add_theme_support( 'custom-header', apply_filters( 'xsbf_custom_header_args', array(
 		'header-text' 			=> false, // doesn't allow user to turn off header text
 		'default-text-color'	=> 'fff',
 		'default-image' => get_stylesheet_directory_uri() . '/images/headers/briefcase-green.jpg',
 		'width' 				=> 1600,
-		'height' 				=> 700, //large: home 700, other 400; mobile home 480, other 340 mobile; images are 900
+		'height' 				=> 750, //large: home 750, other 480; mobile home 480, other 400 mobile; images are 900
 		'flex-width'            => true,
 		'flex-height'           => true,
 		'wp-head-callback'      => 'xsbf_header_style'
@@ -180,83 +185,3 @@ function xsbf_custom_header_setup() {
 		),
 	) );
 }
-
-/*
- * Set the CSS for the Appearance > Header admin panel 
- */
-function xsbf_admin_header_style() {
-	$header_image = get_header_image();
-?>
-	<style type="text/css" id="xsbf-admin-header-css">
-
-	.appearance_page_custom-header #headimg {
-		border: none;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing:    border-box;
-		box-sizing:         border-box;
-		<?php
-		if ( ! empty( $header_image ) ) {
-			echo 'background: url(' . esc_url( $header_image ) . ') no-repeat scroll; background-size: 1600px auto; background-position: center center;';
-			echo 'height: 480px;';
-		} else {
-			echo 'height: 200px;';
-		}
-		?>
-		padding: 0 40px;
-	}
-	#headimg .home-link {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing:    border-box;
-		box-sizing:         border-box;
-		margin: 0 auto;
-		max-width: 1040px;
-		<?php
-		if ( ! empty( $header_image ) ) {
-			echo 'height: 480px;';
-		} else {
-			echo 'height: 200px;';
-		}
-		?>
-		width: 100%;
-	}
-
-	#headimg h1 {
-		font: 700 41px/45px Raleway, Arial, 'Helvetica Neue', sans-serif;
-		<?php
-		if ( ! empty( $header_image ) ) {
-			echo 'margin: 200px 0 11px;';
-		} else {
-			echo 'margin: 50px 0 11px;';
-		}
-		?>
-		text-align: center;
-	}
-	#headimg h2 {
-		font: 300 24px/26px Raleway, Arial, 'Helvetica Neue', sans-serif;
-		margin: 10px 0 25px;
-		text-align: center;
-		/*text-shadow: none;*/
-	}
-	#headimg h1, #headimg h2 {
-		color: white !important;
-	}
-	</style>
-<?php
-}
-
-/* 
- * Display the header image in the Appearance > Header and Appearance > Customize
- */
-function xsbf_admin_header_image() {
-	?>
-	<div id="headimg" style="background: #1abc9c url(<?php header_image(); ?>) no-repeat scroll top; background-size: 1600px auto; background-position: center center;">
-	<div class="section-image-overlay">
-		<?php $style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
-		<div class="home-link">
-			<h1 class="displaying-header-text" <?php echo $style; ?>><?php bloginfo('name'); ?></h1>
-			<h2 id="desc" class="displaying-header-text"<?php echo $style; ?>><?php bloginfo('description'); ?></h2>
-		</div>
-	</div>
-	</div>
-<?php 
-} 

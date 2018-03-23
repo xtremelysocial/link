@@ -97,15 +97,25 @@ For more information, see the "How to use our themes" [http://xtremelysocial.com
 
 
 == CHANGELOG ==
+= 1.5 =
+* Made the handling of the social menu in the main navigation bar more robust. The logic no longer requires the use of <i> tags for the social menu icons. You can now use <span> tags as well.
 
 = 1.4 = 
 * Changed sidebar-pagebottom.php to always fire off the xsbf_pagebottom() filter so that plugins can override what displays there even if a user hasn't added any widgets yet.
+* Fixed minor sidebar-pagebottom.php issue to remove an extra </div> which wasn't breaking the layout, but was causing sample widgets to be in their own <div> instead of within sidebar-pagebottom. 
 * Load the parent theme's (Flat Bootstrap) style.css from functions.php to improve performance instead of using @include in the theme's style.css. 
 * Removed CSS for "after-footer" (footer nav menu and site credits) so it matches the parent theme. This is needed for when Flat Bootstrap v2.0 is released.
 * Updated the comments in functions.php to reflect the new option for custom header location (not used by this theme).
 * We now completely override the parent theme's xsbf_custom_header_setup() because when v2.0 of Flat Bootstrap is released, it will have its own custom headers. 
 * If Jetpack Social Menu is activated, this theme will use that instead of our own. We have also added the phrase "Jetpack" to their social menu so its clear which one is theirs and which one is ours.
 * Added footer.php to override the parent theme. This is needed for when Flat Bootstrap v2.0 is released.
+* Changed custom header image size to 1600x750px (was 1600x900px) to reflect the largest actual size used by the theme (the home page).
+* Removed custom header functions no longer used by WordPress now that its all handled in the Customizer. Specifically xsbf_admin_header_image() and xsbf_admin_header_style().
+* Added CSS to remove border around page in preparation for Flat Bootstrap v2.0. This is because this theme extends beyond the page in the page bottom widget area.
+* Removed site credit reference to Blacktie.co, but of course still credited here and throughout the code itself.
+* Added a blank /images/post-thumbnail-default.png in preparation for Flat Bootstrap v2.0.
+* Remove theme support for custom logo coming in Flat Bootstrap v2.0 (for now)
+* Updated screenshot to high resolution (1200x900px)
 * Added a table of contents to style.css and better organized the sections.
 
 = 1.3 =

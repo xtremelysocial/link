@@ -84,7 +84,6 @@ if ( $xsbf_theme_options['sample_widgets'] != false AND ! $sidebar_pagebottom ) 
 		</div>'
 		.'</div><!-- row -->'
 		.'</div><!-- textwidget -->'
-		.'</div><!-- container -->'
 		.'</aside>';
 
 	$sidebar_pagebottom .= '<div class="contact-footer">
